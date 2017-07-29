@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>PostEditChangeProperty - Property By Meta</Title>
+      <Author>[USERNAME]</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>PropertyMeta</ID>
+          <ToolTip>Property Meta</ToolTip>
+          <Default>MyMeta</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp" Delimiter="$"><![CDATA[    static FName NAME_$PropertyMeta$_Meta(TEXT("$PropertyMeta$"));
+
+	if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->HasMetaData(NAME_$PropertyMeta$_Meta))
+	{
+		// Process property here.
+	}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

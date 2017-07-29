@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>PostEditChangeProperty</Title>
+      <Author>[USERNAME]</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ClassName</ID>
+          <ToolTip>Class Name</ToolTip>
+          <Default>UMyClass</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp" Delimiter="$"><![CDATA[#if WITH_EDITOR
+//for regular properties:
+void $ClassName$::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
+{
+    //Process properties here
+
+    Super::PostEditChangeProperty(PropertyChangedEvent);
+}
+ 
+//for TArrays:
+void $ClassName$::PostEditChangeChainProperty(FPropertyChangedChainEvent& PropertyChangedEvent)
+{
+    //Process properties here
+
+    Super::PostEditChangeChainProperty(PropertyChangedEvent);
+}
+#endif]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
